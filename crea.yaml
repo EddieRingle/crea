@@ -1,0 +1,15 @@
+name: crea
+version: 0.1.0
+authors:
+- Eddie Ringle <eddie@eringle.net>
+sources:
+- src/crea.c
+- src/util/strutil.c
+headers:
+- src/util/strutil.h
+dependencies:
+ getopt_port: +
+ libyaml: 0.1.5
+cflags:
+  -std=c11 -Wall
+  -Werror -lyaml
