@@ -461,8 +461,12 @@ print_sources(source_t *sources)
 }
 
 static void
+print_info(crea_t *crea);
+
+static void
 print_dependencies(dependency_t *deps)
 {
+    crea_t *crea = NULL;
     dependency_t *tmp = NULL;
 
     for (tmp = deps; tmp != NULL; tmp = tmp->next) {
@@ -471,7 +475,13 @@ print_dependencies(dependency_t *deps)
             printf("    version: %s\n", tmp->version);
         } else {
             printf("    file: %s\n", tmp->external.file);
+            crea = parse_file(tmp->external.file);
+            print_info(crea);
+            crea_fini(&crea);
         }
+    }
+    if (deps == NULL) {
+        printf("  none.\n");
     }
 }
 
