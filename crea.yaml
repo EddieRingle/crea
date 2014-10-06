@@ -9,7 +9,8 @@ headers:
 - src/util/strutil.h
 dependencies:
  getopt_port: +
- libyaml: 0.1.5
+ libyaml:
+  file: scripts/crea/libyaml.yaml
 cflags:
   -std=c11 -Wall
   -Werror -lyaml
