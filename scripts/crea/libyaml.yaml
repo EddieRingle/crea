@@ -1,0 +1,22 @@
+name: libyaml
+version: 0.1.5
+authors:
+- Kirill Simonov <xi@resolvent.net>
+external: true
+source-archive: http://pyyaml.org/download/libyaml/yaml-0.1.5.tar.gz
+library-type: static
+sources:
+- src/api.c
+- src/dumper.c
+- src/emitter.c
+- src/loader.c
+- src/parser.c
+- src/reader.c
+- src/scanner.c
+- src/writer.c
+headers:
+- src/yaml_private.h
+includes:
+- include/yaml.h
+cflags:
+ -DHAVE_CONFIG_H -DYAML_DECLARE_STATIC
