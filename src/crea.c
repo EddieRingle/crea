@@ -498,7 +498,7 @@ run_build(crea_t *crea)
         system("mkdir -p .crea/obj");
         for (; src != NULL; src = src->next) {
             path = path_split(src->path);
-            sprintf(cmd, "clang -c %s -o .crea/obj/%s.o", src->path, path->filename);
+            sprintf(cmd, "clang -c %s -o .crea/obj/%s.o %s", src->path, path->filename, crea->cflags);
             system(cmd);
             free(path);
         }
